@@ -9,11 +9,11 @@
 
 <%= grid(@subcategories_grid) do |g|
   g.column name: 'Name', attribute: 'name' do |subcat|
-    subcat.name
+    link_to subcat.name, subcategory_path(subcat)
   end
 
   g.column name: 'Category', attribute: 'name', assoc: :category do |subcat|
-    subcat.category.name
+    link_to subcat.category.name, category_path(subcat.category)
   end
 
   g.column name: 'Actions' do |subcat|
