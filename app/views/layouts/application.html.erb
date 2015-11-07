@@ -6,9 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="container">
-
+<body>
+<div class="container">
+  <%= nav_bar fixed: :top, brand: 'Inventory Manager', responsive: true do  %>
+    <%= menu_group do %>
+      <%= menu_item "Home", root_path %>
+      <%= menu_item "Items", items_path %>
+      <%= drop_down "Categories" do %>
+        <%= menu_item "Categories", categories_path %>
+        <%= menu_item "Subcategories", subcategories_path %>
+      <% end %>
+      <%= drop_down "Locations" do %>
+        <%= menu_item "Locations", locations_path %>
+        <%= menu_item "Sublocations", sublocations_path %>
+      <% end %>
+    <% end %>
+  <% end %>
 <%= yield %>
+</div>
 
 </body>
 </html>
