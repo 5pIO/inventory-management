@@ -5,11 +5,8 @@ class Subcategory < ActiveRecord::Base
   def cat_name
     category.name
   end
+
   def with_cat_name
-    if category.nil?
-      name
-    else
-      "#{cat_name} - #{self.name}"
-    end
+    "#{cat_name} - #{self.name}"
   end
 end

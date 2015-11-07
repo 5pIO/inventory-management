@@ -5,10 +5,6 @@ class Sublocation < ActiveRecord::Base
     location.name
   end
   def with_loc_name
-    if location.nil?
-      name
-    else
-      "#{loc_name} - #{self.name}"
-    end
+    "#{loc_name} - #{self.name}"
   end
 end

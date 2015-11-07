@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  autocomplete :sublocation, :name, :full => true, :display_value => :with_loc_name
-  autocomplete :subcategory, :name, :full => true, :display_value => :with_cat_name
+  autocomplete :sublocation, :name, :full => true, :display_value => :with_loc_name, :extra_data => [:location_id]
+  autocomplete :subcategory, :name, :full => true, :display_value => :with_cat_name, :extra_data => [:category_id]
 
   # GET /items
   # GET /items.json
