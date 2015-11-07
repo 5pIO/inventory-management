@@ -132,6 +132,16 @@ div {
   overflow-y: scroll;
 }
 
+.btn-danger, .btn-primary {
+  a {
+    color: #fff;
+  }
+  &:visited {
+    color: #fff;
+  }
+
+}
+
 .page-header {
   margin: 65px 0 20px;
 }
