@@ -1,0 +1,26 @@
+<%- model_class = Sublocation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @sublocation.name %></dd>
+  <dt><strong>Location:</strong></dt>
+  <dd><%= link_to @sublocation.loc_name, location_path(@sublocation.location) %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              sublocations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_sublocation_path(@sublocation), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              sublocation_path(@sublocation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+
+              <br><br>
+              <strong>Items:</strong>
+              <% @items = @sublocation.items %>
+              <%= render partial: 'items/list'%>

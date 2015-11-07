@@ -1,0 +1,18 @@
+<%= grid(@items_grid) do |g|
+  g.column name: 'Name', attribute: 'name' do |item|
+    link_to item.name, item_path(item)
+  end
+  g.column name: 'Description', attribute: 'description'  do |item|
+    link_to item.description, item_path(item)
+  end
+  g.column name: 'Location', attribute: 'name', assoc: :sublocation do |item|
+    link_to item.sublocation.with_loc_name, sublocation_path(item.sublocation)
+  end
+  g.column name: 'Category', attribute: 'name' , assoc: :subcategory do |item|
+    link_to item.subcategory.with_cat_name, subcategory_path(item.subcategory)
+  end
+  g.column name: 'Stock', attribute: 'stock' do |item|
+    item.stock
+  end
+
+end -%>
