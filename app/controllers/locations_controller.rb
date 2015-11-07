@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations_grid = initialize_grid(Location)
   end
 
   # GET /locations/1

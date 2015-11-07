@@ -4,7 +4,7 @@ class SublocationsController < ApplicationController
   # GET /sublocations
   # GET /sublocations.json
   def index
-    @sublocations = Sublocation.all
+    @sublocations_grid = initialize_grid(Sublocation)
   end
 
   # GET /sublocations/1
