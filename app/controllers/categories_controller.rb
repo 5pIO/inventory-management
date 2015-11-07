@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories_grid = initialize_grid(Category)
   end
 
   # GET /categories/1
