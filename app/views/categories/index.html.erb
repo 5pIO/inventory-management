@@ -2,6 +2,11 @@
 <div class="page-header">
   <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
 </div>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_category_path,
+            :class => 'btn btn-primary btn-margin-bottom' %>
+
 <%= grid(@categories_grid) do |g|
   g.column name: 'Name', attribute: 'name' do |cat|
     cat.name
@@ -15,7 +20,7 @@
       category_path(cat),
       :method => :delete,
       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-      :class => 'btn btn-xs btn-danger btn-margin'
+      :class => 'btn btn-xs btn-danger btn-margin-left'
     raw buffer
 
   end
