@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :subcategories
   resources :categories
   resources :items do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'items#index'
+  root to: "items#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

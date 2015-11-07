@@ -1,6 +1,7 @@
 class SubcategoriesController < ApplicationController
   before_action :set_subcategory, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /subcategories
   # GET /subcategories.json
   def index

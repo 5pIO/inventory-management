@@ -1,6 +1,7 @@
 class SublocationsController < ApplicationController
   before_action :set_sublocation, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /sublocations
   # GET /sublocations.json
   def index

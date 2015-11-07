@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   def live_search
     @locations = Location.where("name LIKE '%#{params[:q]}'")
     render :layout => false
