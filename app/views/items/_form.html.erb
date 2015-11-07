@@ -46,6 +46,13 @@
     <%= error_span(@item[:subcategory_id]) %>
   </div>
   <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%= error_span(@item[:price]) %>
+  </div>
+  <div class="control-group">
     <%= f.label :stock, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :stock, :class => 'form-control' %>

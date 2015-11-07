@@ -12,6 +12,8 @@
   <dd><%= @item.sublocation.with_loc_name %></dd>
   <dt><strong>Category:</strong></dt>
   <dd><%= @item.subcategory.with_cat_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @item.price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stock) %>:</strong></dt>
   <dd><%= @item.stock %></dd>
 </dl>

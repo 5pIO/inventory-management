@@ -35,6 +35,9 @@ class ItemsController < ApplicationController
     if @item.stock.nil?
       @item.stock = 0
     end
+    if @item.price.nil?
+      @item.price = 0
+    end
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -81,6 +84,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :sublocation_id, :subcategory_id, :stock)
+      params.require(:item).permit(:name, :description, :sublocation_id, :subcategory_id, :stock, :price)
     end
 end
