@@ -27,9 +27,14 @@
       <% end %>
     <% end %>
   <% end %>
+  <% if alert %>
+    <p class="alert alert-danger" style="margin-top: 65px;"><%= alert %></p>
+  <% end %>
+  <% if notice %>
+    <p class="alert alert-info" style="margin-top: 65px;"><%= notice %></p>
+  <% end %>
 <%= yield %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
 </div>
 
 </body>
