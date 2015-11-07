@@ -3,8 +3,8 @@
   <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
 </div>
 
-<%= render partial: 'list' %>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_item_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary btn-margin-bottom' %>
+
+<%= render partial: 'list' %>
