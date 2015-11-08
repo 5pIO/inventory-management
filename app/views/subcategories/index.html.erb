@@ -16,6 +16,10 @@
     link_to subcat.category.name, category_path(subcat.category)
   end
 
+  g.column name: 'No Of Items', custom_filter: :auto do |subcat|
+    subcat.items.count
+  end
+
   g.column name: 'Actions' do |subcat|
     buffer = link_to t('.edit', :default => t("helpers.links.edit")),
                 edit_subcategory_path(subcat), :class => 'btn btn-default btn-xs'
