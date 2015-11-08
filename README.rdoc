@@ -1,28 +1,8 @@
-== README
+== Inventory Management
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails app for handling inventory management, It has categories, subcategories, locations, sublocation, stock and price for different items.
 
-Things you may want to cover:
+It can be pushed to heroku for a quick start, you will need to go to the console and create a user with a password to login.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+==License
+This is licensed under the WTFPL license. Refer to the license file for details :laughing:
