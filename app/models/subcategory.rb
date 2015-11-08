@@ -11,4 +11,8 @@ class Subcategory < ActiveRecord::Base
   def with_cat_name
     "#{cat_name} - #{self.name}"
   end
+
+  def item_count
+    items.count
+  end
 end

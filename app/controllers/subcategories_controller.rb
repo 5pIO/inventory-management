@@ -5,10 +5,7 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories
   # GET /subcategories.json
   def index
-    @subcategories_grid = initialize_grid(
-    Subcategory,
-    custom_order: {'items.subcategory_id' => 'item_count'}
-    )
+    @subcategories_grid = initialize_grid(Subcategory)
   end
 
   # GET /subcategories/1
