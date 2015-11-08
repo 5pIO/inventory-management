@@ -16,8 +16,8 @@
     link_to subcat.category.name, category_path(subcat.category)
   end
 
-  g.column name: 'No Of Items', custom_filter: :auto do |subcat|
-    subcat.items.count
+  g.column name: 'No Of Items', assoc: :items, attribute: 'subcategory_id' do |subcat|
+    subcat.items.size
   end
 
   g.column name: 'Actions' do |subcat|
