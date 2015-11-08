@@ -14,12 +14,17 @@
       <%= menu_item "Items", items_path %>
       <%= drop_down "Categories" do %>
         <%= menu_item "Categories", categories_path %>
+        <%= menu_item "+New Category", new_category_path %>
         <%= menu_item "Subcategories", subcategories_path %>
+        <%= menu_item "+New Subcategory", new_subcategory_path %>
       <% end %>
       <%= drop_down "Locations" do %>
         <%= menu_item "Locations", locations_path %>
+        <%= menu_item "+New Location", new_location_path %>
         <%= menu_item "Sublocations", sublocations_path %>
+        <%= menu_item "+New Sublocation", new_sublocation_path %>
       <% end %>
+      <%= menu_item "+New Item", new_item_path %>
     <% end %>
     <%= menu_group pull: :right do %>
       <% if current_user %>
