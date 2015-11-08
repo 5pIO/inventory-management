@@ -1,11 +1,14 @@
 class SubcategoriesController < ApplicationController
   before_action :set_subcategory, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   # GET /subcategories
   # GET /subcategories.json
   def index
-    @subcategories_grid = initialize_grid(Subcategory)
+    @subcategories_grid = initialize_grid(
+    Subcategory,
+    custom_order: {'items.subcategory_id' => 'item_count'}
+    )
   end
 
   # GET /subcategories/1
