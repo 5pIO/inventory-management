@@ -16,7 +16,7 @@
     link_to subcat.category.name, category_path(subcat.category)
   end
 
-  g.column name: 'No Of Items', assoc: :items, attribute: 'subcategory_id' do |subcat|
+  g.column name: 'No Of Items' do |subcat|
     subcat.items.size
   end
 
