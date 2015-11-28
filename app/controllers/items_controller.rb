@@ -22,10 +22,12 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    3.times { @item.assets.build }
   end
 
   # GET /items/1/edit
   def edit
+    3.times { @item.assets.build }
   end
 
   # POST /items
@@ -52,6 +54,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+    # params[:item][:existing_asset_attributes] ||= {}
     if @item.stock.nil?
       @item.stock = 0
     end
@@ -84,6 +87,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :sublocation_id, :subcategory_id, :stock, :price)
+      params.require(:item).permit(:name, :description, :sublocation_id, :subcategory_id, :stock, :price, assets_attributes: [ :_destroy, :name, :id, :file ])
     end
 end

@@ -16,6 +16,10 @@
   <dd><%= @item.price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stock) %>:</strong></dt>
   <dd><%= @item.stock %></dd>
+  <dt><strong>Assets:</strong></dt>
+  <% for asset in @item.assets %>
+  <dd><%= link_to asset.name, asset.file.url %></dd>
+<% end %>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
