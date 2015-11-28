@@ -18,7 +18,7 @@
   <dd><%= @item.stock %></dd>
   <dt><strong>Assets:</strong></dt>
   <% for asset in @item.assets %>
-  <dd><%= link_to asset.name, asset.file.url %></dd>
+  <dd><%= link_to asset.name, asset.file.url, target: "_blank" %></dd>
 <% end %>
 </dl>
 
