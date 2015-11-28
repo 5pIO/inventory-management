@@ -1,0 +1,11 @@
+<div class="asset">
+  <% new_or_existing = asset.new_record? ? 'new' : 'existing' %>
+  <% prefix = "item[#{new_or_existing}_asset_attributes][]" %>
+
+  <% fields_for prefix, asset do |asset_form| -%>
+    <p>
+      Asset: <%= asset_form.file_field :file %>
+      <%= link_to "remove", "javascript:void(0);", id: "remove_asset" %>
+    </p>
+<% end -%>
+</div>
